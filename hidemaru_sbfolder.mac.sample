@@ -1,0 +1,22 @@
+// ★ SbFolder.exe のフルパスを指定してください。
+// ★ ※区切り文字は \\ と二重で書く必要があります。
+$sbfolder_bin_path = "D:\\bin\\SbFolder\\SbFolder.exe";
+// ----------------------------
+// ----------------------------
+
+$DP    = "\"";
+$arg_x = str(xpixel);
+$arg_y = str(ypixel);
+$arg_directory_of_opened_file = directory2;
+$commandline = $DP + $sbfolder_bin_path + $DP + " " + $DP + $arg_directory_of_opened_file + $DP + " " + "/" + $arg_x + "," + $arg_y;
+
+// For Debugging
+//message $commandline;
+//endmacro;
+
+run $commandline;
+if(result == 0){
+	message "起動に失敗しました.\n> " + $commandline;
+}
+
+endmacro;
